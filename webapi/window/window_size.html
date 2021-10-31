@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Window Size</title>
+</head>
+<body>
+    <!-- screen : 모니터 사이즈   -->
+    <h1>window.screen: <span id="window-screen"></span></h1>
+    <!-- outer : 브라우저 전체 사이즈(URL, Tab 포함) -->
+    <h1>window.outer: <span id="window-outer"></span></h1>
+    <!-- inner : 스크롤바 포함 document 사이즈 -->
+    <h1>window.inner: <span id="window-inner"></span></h1>
+    <!-- documentElement.clientWidth : 스크롤바를 제외한 순수 document 사이즈   -->
+    <h1>documentElement.clientWidth: <span id="doc-client-width"></span></h1>
+
+    <script>
+        const windowScreen = document.querySelector('#window-screen');
+        const windowOuter = document.querySelector('#window-outer');
+        const windowInner = document.querySelector('#window-inner');
+        const docClient = document.querySelector('#doc-client-width');
+
+        function updateSize() {
+            windowScreen.innerHTML = window.screen.width + ', ' + window.screen.height;
+            windowOuter.innerHTML = window.outerWidth + ', ' + window.outerHeight;
+            windowInner.innerHTML = window.innerWidth + ', ' + window.innerHeight;
+            docClient.innerHTML = document.documentElement.clientWidth + ', ' + document.documentElement.clientHeight;
+        }
+
+        window.addEventListener('resize', () => {
+            updateSize();
+        })
+
+        updateSize();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Window Load</title>
+    <!-- defer는 html을 다 읽고 DOMContentLoaded 이벤트가 발생하기 전에 js파일을 읽게한다.   -->
+    <script src="js/dummy.js" defer></script>
+</head>
+<body>
+    <script>
+        // after resources (css, images...)
+        window.addEventListener('load', () => {
+            console.log('load')
+        })
+
+        // only document(HTML)
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('DomContentLoaded')
+        })
+
+        // before unload, 사용자가 페이지를 나가기 전에
+        window.addEventListener('beforeunload', () => {
+            console.log('beforeunload')
+        })
+
+        // 리소스같은 것들이 모두 unload 되었을때
+        window.addEventListener('unload', () => {
+            console.log('unload')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scroll Move</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .btns {
+            position: fixed;
+            right: 0;
+            top: 0;
+            font-size: 0;
+            padding: 3px;
+        }
+        .btn {
+            padding: 5px;
+            margin: 3px;
+        }
+        .boxes {
+
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px black solid;
+            margin: 20px;
+            background-color: azure;
+        }
+
+        .box.special {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="btns">
+        <button class="btn" id="btn-by">Scroll by 100px(y)</button>
+        <button class="btn" id="btn-to">Scroll to 100px(y)</button>
+        <button class="btn" id="btn-special">Scroll into special</button>
+    </div>
+    <div class="boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box special"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+<script>
+    let btnBy = document.querySelector('#btn-by');
+    let btnTo = document.querySelector('#btn-to');
+    let btnSpecial = document.querySelector('#btn-special');
+    let specialElement = document.querySelector('.special');
+
+    btnBy.addEventListener('click', event => {
+        window.scrollBy(0, 100);
+    });
+    btnTo.addEventListener('click', event => {
+        window.scrollTo(0, 100);
+    });
+    btnSpecial.addEventListener('click', event => {
+        specialElement.scrollIntoView();
+    });
+</script>
+</body>
+</html>

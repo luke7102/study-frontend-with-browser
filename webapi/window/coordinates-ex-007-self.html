@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coordinates Example 007</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .row-line, .col-line, .target-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .target-image {
+            width: 100px;
+            height: 100px;
+            z-index: 1000;
+        }
+
+        .row-line {
+            width: 100%;
+            height: 1px;
+            background-color: white;
+            top: 49px;
+            left: 0;
+            z-index: 0;
+        }
+
+        .col-line {
+            width: 1px;
+            height: 100%;
+            background-color: white;
+            top: 0;
+            left: 49px;
+            z-index: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="row-line"></div>
+    <div class="col-line"></div>
+    <img class="target-image" src="./images/target.png" alt="target image">
+    <script>
+        let rowLine = document.querySelector('.row-line');
+        let colLine = document.querySelector('.col-line');
+        let targetImage = document.querySelector('.target-image');
+        document.addEventListener('pointermove', event => {
+            targetImage.style.left = event.x + 'px';
+            targetImage.style.top = event.y + 'px';
+            rowLine.style.top = (event.y + 49) + 'px';
+            colLine.style.left = (event.x + 49) + 'px';
+        })
+    </script>
+</body>
+</html>
