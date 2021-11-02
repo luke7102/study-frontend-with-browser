@@ -1,0 +1,116 @@
+* {
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Irish Grover', cursive;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FBEAFF;
+}
+
+.app-container {
+    width: 70vw;
+    height: 70vh;
+    background: linear-gradient(90deg, rgba(132, 94, 194, 1) 0%, rgba(173, 94, 186, 1) 23%, rgba(255, 150, 113, 1) 43%, rgba(255, 111, 145, 1) 65%, rgba(255, 199, 95, 1) 81%, rgba(249, 248, 113, 1) 100%);
+    border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+}
+
+#app-title {
+    font-size: 3rem;
+    color: #030048;
+    line-height: 0;
+}
+
+section {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    padding: 0 20px;
+}
+
+#item-box {
+    flex-basis: 90%;
+    overflow: auto;
+}
+
+#input-box {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 10%;
+}
+
+#input-box-label {
+    font-size: 1.5rem;
+    color: #030048;
+    border-bottom: 1px solid #030048;
+}
+
+#input-name {
+    border: none;
+    height: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#input-name:focus-visible {
+    outline: none;
+}
+
+.item {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #030048;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-name {
+    font-size: 2rem;
+}
+
+.item-delete-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-delete-btn:hover {
+    color: darkgray;
+}
+
+.item-delete-btn > i {
+    font-size: 2rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+}
+
+#add-btn {
+    font-size: 40pt;
+    color: #FFFFFF;
+}
+
+#add-btn:hover {
+    color: #FEFEDF;
+}
